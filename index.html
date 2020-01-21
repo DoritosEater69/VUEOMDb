@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div class="container-fluid" id="app">
+		<div class="row">
+			<div class="col-12 text-center align-items-center pt-5">
+				<input type="text" class="form-control" placeholder="Movie Title" aria-label="Username" aria-describedby="basic-addon1" v-model="title" @change="getMovie(title)">
+			</div>
+		</div>
+
+		<div class="row pt-5">
+			<div class="col-12">
+				<div class="row d-flex flex-row">
+					<div class="col-3">
+						<div class="movieTitle py-2">
+							{{ movieData.Title }}
+						</div>
+						<img :src="movieData.Poster" class="img-fluid">
+						<div class="row">
+							<div class="col-12 text-center">
+								{{ movieData.Genre }}
+							</div>
+						</div>
+					</div>
+					<div class="row d-flex flex-column">
+						<div class="row">
+							<div class="col-12">
+								Released: {{ movieData.Released }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								Actors: {{ movieData.Actors }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								Director: {{ movieData.Director }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								Language: {{ movieData.Language }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								Plot: {{ movieData.Plot }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								Runtime: {{ movieData.Runtime }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12  d-flex flex-row align-items-center">
+								Rated:
+								<div class="rated d-flex justify-content-center align-items-center ml-4">
+									{{ movieData.Rated }}
+								</div>
+							</div>
+						</div>
+
+						<div class="row d-flex flex-row">
+							<div class="col-12 d-flex flex-row align-items-center">
+								Metascore:
+								<div class="metascore d-flex justify-content-center align-items-center ml-4">
+									<span>{{ movieData.Metascore }}</span>
+								</div>
+							</div>
+						</div>
+						<div class="row" v-for="rate in movieData.Ratings">
+							<div class="col-12">
+								Source: {{ rate.Source }}<br>
+								<span v-if="rate.Source == 'Metacritic'"><img src="gfx/metacritic.png" class="img-fluid metacritic"></span><span v-if="rate.Source == 'Rotten Tomatoes'"><img src="gfx/rotten.jpg" class="img-fluid rottentomatoes"></span><span v-if="rate.Source == 'Internet Movie Database'"><img src="gfx/imd.svg" class="img-fluid imd"></span> Value: {{ rate.Value }}
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.js"></script>
+	<script src="js/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+
+</html>

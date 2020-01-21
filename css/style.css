@@ -1,0 +1,41 @@
+.metascore {
+	background-color: #8cba51;
+	height: 80px;
+	width: 80px;
+	font-size: 2em;
+	color: #FFFFFF;
+	font-weight: bold;
+	border-radius: 20px;
+}
+
+.movieTitle {
+	background-color: rgba(0, 0, 0, 0.6);
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 1.3em;
+}
+
+.rated {
+	background-color: #9d0b0b;
+	height: 80px;
+	width: 80px;
+	font-size: 2em;
+	color: #FFFFFF;
+	font-weight: bold;
+	border-radius: 20px;
+}
+
+.metacritic {
+	height: 10%;
+	width: auto;
+}
+
+.rottentomatoes {
+	height: 10%;
+	width: auto;
+}
+
+.imd {
+	height: 10%;
+	width: auto;
+}
